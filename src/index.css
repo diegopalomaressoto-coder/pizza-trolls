@@ -1,0 +1,283 @@
+:root {
+  /* Paleta: verde pino + arena, pensada para leer bien al sol */
+  --pine-900: #0c1714;
+  --pine-800: #12201c;
+  --pine-700: #1b2f29;
+  --pine-600: #2a4a41;
+  --pine-400: #4f8c7b;
+  --sand-300: #e8dcc8;
+  --sand-500: #c9a870;
+  --clay-500: #c4714f;
+
+  --bg: #f6f3ec;
+  --surface: #ffffff;
+  --surface-2: #efeae0;
+  --border: #ddd5c6;
+  --text: #1a211f;
+  --text-dim: #5e6a66;
+  --accent: var(--pine-600);
+  --accent-text: #ffffff;
+
+  --diego: #2a7f9e;
+  --an: #c4714f;
+  --dos: var(--pine-400);
+
+  --radius: 14px;
+  --nav-h: 64px;
+
+  color-scheme: light dark;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: var(--pine-900);
+    --surface: var(--pine-800);
+    --surface-2: var(--pine-700);
+    --border: #26403a;
+    --text: #e9efec;
+    --text-dim: #93a39e;
+    --accent: var(--pine-400);
+    --accent-text: var(--pine-900);
+    --diego: #5bb3d1;
+    --an: #e09170;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.5;
+  overscroll-behavior-y: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* ---------- Estructura ---------- */
+
+.app {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: calc(14px + env(safe-area-inset-top)) 16px 12px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+
+.topbar .sub {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.lang {
+  margin-left: auto;
+  display: flex;
+  gap: 2px;
+  background: var(--surface-2);
+  border-radius: 999px;
+  padding: 2px;
+}
+
+.lang button {
+  border: 0;
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.lang button.active {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+main {
+  flex: 1;
+  padding: 18px 16px calc(var(--nav-h) + 28px + env(safe-area-inset-bottom));
+}
+
+/* ---------- Navegación inferior ---------- */
+
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 560px;
+  margin: 0 auto;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  height: var(--nav-h);
+  text-decoration: none;
+  color: var(--text-dim);
+  font-size: 0.68rem;
+  letter-spacing: 0.01em;
+}
+
+.nav a.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.nav svg {
+  width: 23px;
+  height: 23px;
+}
+
+/* ---------- Piezas reutilizables ---------- */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+}
+
+.muted {
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.chip {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-dim);
+}
+
+.chip.diego {
+  background: color-mix(in srgb, var(--diego) 18%, transparent);
+  color: var(--diego);
+}
+
+.chip.an {
+  background: color-mix(in srgb, var(--an) 18%, transparent);
+  color: var(--an);
+}
+
+.chip.dos {
+  background: color-mix(in srgb, var(--dos) 20%, transparent);
+  color: var(--dos);
+}
+
+.balance {
+  background: var(--accent);
+  color: var(--accent-text);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-bottom: 16px;
+}
+
+.balance .amount {
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  display: block;
+}
+
+.balance .label {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.pending-note {
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  color: var(--text-dim);
+  font-size: 0.88rem;
+}
+
+.pending-note strong {
+  color: var(--text);
+}
+
+.pending-note ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+.pending-note li {
+  margin-bottom: 3px;
+}
+
+.section-label {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-dim);
+  font-weight: 700;
+  margin: 22px 0 10px;
+}
+
+.section-label:first-child {
+  margin-top: 0;
+}
