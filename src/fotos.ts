@@ -12,7 +12,8 @@ export const PIZZAS: string[] = [1, 2, 3, 4].map(
   (n) => `${base}fotos/pizza-${n}.jpg`,
 )
 
-export const TROLLS: string[] = [1, 2, 3, 4].map(
+// Solo hay dos fotos libres de muñecos troll; las estatuas no valían.
+export const TROLLS: string[] = [1, 2].map(
   (n) => `${base}fotos/troll-${n}.jpg`,
 )
 
