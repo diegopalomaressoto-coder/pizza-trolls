@@ -6,7 +6,7 @@ export default function BottomNav() {
   const { t } = useLang()
 
   return (
-    <nav className="nav" aria-label="Trols">
+    <nav className="nav" aria-label="Pizza & Trolls">
       {SECTIONS.map(({ path, labelKey, icon }) => (
         <NavLink
           key={path}

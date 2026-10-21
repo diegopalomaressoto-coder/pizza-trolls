@@ -1,4 +1,4 @@
-# Trols
+# Pizza & Trolls
 
 App de An y Diego: calendario, proyectos, propuestas y cuentas compartidas.
 
@@ -25,24 +25,24 @@ final una nota con lo que falta por conectar.
 ## Subirlo a GitHub por primera vez
 
 ```bash
-cd trols
+cd pizza-trolls
 git init -b main
 git add -A
 git commit -m "Primera versión de Trols"
-gh repo create trols --private --source=. --push
+gh repo create pizza-trolls --private --source=. --push
 ```
 
 Si no usas `gh`, crea el repo vacío en github.com y luego:
 
 ```bash
-git remote add origin https://github.com/TU-USUARIO/trols.git
+git remote add origin https://github.com/TU-USUARIO/pizza-trolls.git
 git push -u origin main
 ```
 
 Después, en GitHub: **Settings → Pages → Source: GitHub Actions**. Al terminar
-el workflow, la app queda en `https://TU-USUARIO.github.io/trols/`.
+el workflow, la app queda en `https://TU-USUARIO.github.io/pizza-trolls/`.
 
-> Si el repo no se llama `trols`, cambia la constante `BASE` en
+> Si el repo no se llama `pizza-trolls`, cambia la constante `BASE` en
 > `vite.config.ts` para que coincida con el nombre.
 
 ## Instalarla en el móvil

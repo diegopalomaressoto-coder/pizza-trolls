@@ -2,9 +2,9 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
-// Si publicas en https://<usuario>.github.io/trols/ el base tiene que ser '/trols/'.
+// Si publicas en https://<usuario>.github.io/pizza-trolls/ el base tiene que ser '/trols/'.
 // Si algún día usas un dominio propio, cambia BASE a '/'.
-const BASE = '/trols/'
+const BASE = '/pizza-trolls/'
 
 export default defineConfig({
   base: BASE,
@@ -14,8 +14,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'icon-192.png', 'icon-512.png'],
       manifest: {
-        name: 'Trols',
-        short_name: 'Trols',
+        name: 'Pizza & Trolls',
+        short_name: 'Pizza&Trolls',
         description: 'Calendario, proyectos, propuestas y cuentas de An y Diego',
         lang: 'es',
         start_url: BASE,

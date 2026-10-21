@@ -12,7 +12,7 @@ export default function App() {
   return (
     <div className="app">
       <header className="topbar">
-        <h1>{current ? t(current.labelKey) : 'Trols'}</h1>
+        <h1>{current ? t(current.labelKey) : 'Pizza & Trolls'}</h1>
         <span className="sub">{t('app.subtitle')}</span>
         <SelectorIdioma />
       </header>

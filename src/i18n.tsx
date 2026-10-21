@@ -116,7 +116,7 @@ const DICT = {
 
 export type Key = keyof typeof DICT
 
-const STORAGE_KEY = 'trols.lang'
+const STORAGE_KEY = 'pizzatrolls.lang'
 
 function idiomaInicial(): Lang {
   try {
