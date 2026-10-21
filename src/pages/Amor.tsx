@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Pendiente from '../components/Pendiente'
 import { useLang, type Key } from '../i18n'
-import { PIZZAS, TROLLS, alAzar } from '../ilustraciones'
+import { PIZZAS, TROLLS, alAzar } from '../fotos'
 import { NOMBRE, OTRO, useQuien, type Persona } from '../quien'
 
 const MOTIVOS: Key[] = [
@@ -12,7 +12,7 @@ const MOTIVOS: Key[] = [
 ]
 
 /** A cada uno le llega lo que le gusta. */
-const BARAJA: Record<Persona, typeof PIZZAS> = { diego: PIZZAS, an: TROLLS }
+const BARAJA: Record<Persona, string[]> = { diego: PIZZAS, an: TROLLS }
 
 export default function Amor() {
   const { t } = useLang()
@@ -32,7 +32,9 @@ export default function Amor() {
         <div className="quien-soy">
           {(['diego', 'an'] as Persona[]).map((p) => (
             <button key={p} type="button" onClick={() => setQuien(p)}>
-              <span className="figura">{BARAJA[p][0]}</span>
+              <span className="figura">
+                <img src={BARAJA[p][0]} alt="" />
+              </span>
               {t('amor.soy', { nombre: NOMBRE[p] })}
             </button>
           ))}
@@ -68,8 +70,8 @@ export default function Amor() {
       const reg = await navigator.serviceWorker.ready
       await reg.showNotification(`${NOMBRE[quien]} 💌`, {
         body: t(motivo),
-        icon: 'icon-192.png',
-        badge: 'icon-192.png',
+        icon: baraja[foto],
+        badge: `${import.meta.env.BASE_URL}icon-192.png`,
         tag: 'amor',
       })
     } catch {
@@ -100,9 +102,13 @@ export default function Amor() {
       </div>
 
       <div className="envio">
-        <div className="figura">{baraja[foto]}</div>
+        <div className="figura">
+          <img src={baraja[foto]} alt="" />
+        </div>
         <p className="mensaje">{t(motivo)}</p>
-        <p className="muted">{NOMBRE[quien]} → {NOMBRE[destino]}</p>
+        <p className="muted">
+          {NOMBRE[quien]} → {NOMBRE[destino]}
+        </p>
 
         <button type="button" className="enlace-sutil" onClick={otraFoto}>
           {t('amor.otra')}
