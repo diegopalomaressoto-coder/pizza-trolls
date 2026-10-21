@@ -112,6 +112,46 @@ const DICT = {
     es: 'Cola de gastos creados sin cobertura',
     nl: 'Wachtrij voor uitgaven die zonder bereik zijn ingevoerd',
   },
+  'nav.amor': { es: 'Amor', nl: 'Liefde' },
+  'amor.quien': { es: '¿Quién eres?', nl: 'Wie ben jij?' },
+  'amor.quien.nota': {
+    es: 'Solo hasta que la app tenga login.',
+    nl: 'Alleen tot de app een login heeft.',
+  },
+  'amor.soy': { es: 'Soy {nombre}', nl: 'Ik ben {nombre}' },
+  'amor.cambiar': { es: 'No soy yo, cambiar', nl: 'Ik ben het niet, wijzigen' },
+  'amor.para': {
+    es: 'Esto le llegará a {nombre}',
+    nl: 'Dit krijgt {nombre}',
+  },
+  'amor.motivo.quiero': { es: 'Te quiero', nl: 'Ik hou van jou' },
+  'amor.motivo.echo': { es: 'Te echo de menos', nl: 'Ik mis je' },
+  'amor.motivo.gracias': { es: 'Gracias', nl: 'Dankjewel' },
+  'amor.motivo.ven': { es: 'Ven a casa', nl: 'Kom naar huis' },
+  'amor.otra': { es: 'Otra foto', nl: 'Andere foto' },
+  'amor.enviar': { es: 'Enviar', nl: 'Versturen' },
+  'amor.enviado': { es: '¡Enviado!', nl: 'Verstuurd!' },
+  'amor.permiso': { es: 'Activar notificaciones', nl: 'Meldingen aanzetten' },
+  'amor.permiso.no': {
+    es: 'Has bloqueado las notificaciones en este móvil.',
+    nl: 'Je hebt meldingen geblokkeerd op deze gsm.',
+  },
+  'amor.demo': {
+    es: 'Prueba: por ahora la notificación sale en este móvil, no en el del otro.',
+    nl: 'Test: voorlopig verschijnt de melding op deze gsm, niet op die van de ander.',
+  },
+  'amor.pend.1': {
+    es: 'Que llegue de verdad al móvil del otro',
+    nl: 'Dat het echt op de gsm van de ander aankomt',
+  },
+  'amor.pend.2': {
+    es: 'Subir vuestras propias fotos de pizzas y trolls',
+    nl: 'Jullie eigen foto’s van pizza’s en trollen uploaden',
+  },
+  'amor.pend.3': {
+    es: 'Álbum con todo lo recibido',
+    nl: 'Album met alles wat je hebt gekregen',
+  },
 } satisfies Record<string, Record<Lang, string>>
 
 export type Key = keyof typeof DICT

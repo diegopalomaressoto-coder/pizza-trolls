@@ -4,6 +4,7 @@ import Calendario from './pages/Calendario'
 import Proyectos from './pages/Proyectos'
 import Propuestas from './pages/Propuestas'
 import Economia from './pages/Economia'
+import Amor from './pages/Amor'
 
 export type Section = {
   path: string
@@ -51,6 +52,21 @@ export const SECTIONS: Section[] = [
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 3a6 6 0 0 1 3.6 10.8c-.6.5-.9 1-1 1.7l-.1.5H9.5l-.1-.5c-.1-.7-.4-1.2-1-1.7A6 6 0 0 1 12 3Z" {...stroke} />
         <path d="M10 19h4M10.5 21.5h3" {...stroke} />
+      </svg>
+    ),
+  },
+  {
+    path: '/amor',
+    labelKey: 'nav.amor',
+    Page: Amor,
+    icon: (
+      // Una porción de pizza con forma de corazón
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M12 20.5C5.5 16 3 11.8 4.6 8.6 6.1 5.6 10 6.2 12 9.2c2-3 5.9-3.6 7.4-.6 1.6 3.2-.9 7.4-7.4 11.9Z"
+          {...stroke}
+        />
+        <path d="M9.6 11.8h.01M14.3 11.9h.01M12 15.2h.01" {...stroke} strokeWidth={2.6} />
       </svg>
     ),
   },
